@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mapeo Offline Pro</title>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="manifest" href="manifest.json" />
+	</head>
+	<body>
+		<div id="map"></div>
+
+		<div class="sidebar">
+			<div class="header">
+				<h1>🌍 Mapeo C11</h1>
+				<p>¡Marca y gestiona tus lugares!</p>
+			</div>
+
+			<div class="form-group">
+				<input
+					type="file"
+					id="photoInput"
+					accept="image/*"
+					capture="environment" />
+				<img id="photoPreview" class="photo-preview" />
+			</div>
+
+			<div class="form-group">
+				<input
+					type="text"
+					id="placeName"
+					placeholder="Nombre del lugar"
+					required />
+			</div>
+
+			<div class="form-group">
+				<textarea id="placeDesc" placeholder="Descripción..."></textarea>
+			</div>
+
+			<div class="form-group">
+				<select id="placeCategory">
+					<option value="deportivo">🏟️ Deportivo</option>
+					<option value="cafetero">☕ Cafetero</option>
+					<option value="cultural">🎨 Cultural</option>
+				</select>
+			</div>
+
+			<button onclick="savePlace()">💾 Guardar Punto</button>
+
+			<div class="export-buttons">
+				<button onclick="exportData()" class="export-btn">
+					📤 Exportar Todo
+				</button>
+				<button onclick="resetAll()" class="reset-btn">
+					🔄 Reiniciar Todo
+				</button>
+			</div>
+
+			<div class="marker-list" id="markerList"></div>
+		</div>
+
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>

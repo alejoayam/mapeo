@@ -1,0 +1,129 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	display: flex;
+	height: 100vh;
+	background: #f0f2f5;
+}
+
+#map {
+	flex: 3;
+	height: 100vh;
+	z-index: 1;
+}
+
+.sidebar {
+	flex: 1;
+	max-width: 350px;
+	background: white;
+	padding: 20px;
+	box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+	overflow-y: auto;
+}
+
+.header {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.header h1 {
+	color: #2c3e50;
+	font-size: 1.8em;
+	margin-bottom: 10px;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+input,
+textarea,
+select,
+button {
+	width: 100%;
+	padding: 12px;
+	border: 2px solid #e0e0e0;
+	border-radius: 8px;
+	font-size: 14px;
+	transition: all 0.3s;
+}
+
+button {
+	color: white;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.photo-preview {
+	width: 100%;
+	border-radius: 8px;
+	margin-top: 10px;
+	display: none;
+}
+
+.marker-list {
+	margin-top: 20px;
+	border-top: 2px solid #eee;
+	padding-top: 15px;
+}
+
+.marker-item {
+	padding: 10px;
+	background: #f8f9fa;
+	border-radius: 8px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.marker-color {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.export-btn {
+	background: #3498db !important;
+}
+
+.reset-btn {
+	background: #e74c3c !important;
+	margin-top: 10px;
+}
+
+.marker-item button {
+	background: #e74c3c !important;
+	color: white !important;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.marker-item button:hover,
+.export-btn:hover,
+.reset-btn:hover {
+	opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+	body {
+		flex-direction: column;
+	}
+	#map {
+		height: 60vh;
+	}
+	.sidebar {
+		max-width: 100%;
+	}
+}
